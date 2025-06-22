@@ -1,7 +1,7 @@
 'use client';
 import Header from './components/Header';
 import Inicio from './components/Inicio';
-import Proyectos from './components/Proyectos';
+import Proyectos from './components/Proyectos/Proyectos';
 import Contacto from './components/Contacto';
 import Experiencia from './components/Experiencia';
 
