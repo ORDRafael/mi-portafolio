@@ -26,25 +26,25 @@ function Inicio() {
     return (
         <div>
             {/* Sección principal */}
-            <div className='flex justify-between mx-10'>
+            <div className='flex flex-col md:flex-row justify-between mx-4 md:mx-10'>
                 <div className='max-w-md'>
-                    <h1 className='text-7xl font-bold text-zinc-200'>Rafael Ordaz</h1>
-                    <h3 className='text-4xl font-medium text-zinc-100 my-5'>Front end developer</h3>
-                    <p className='text-xl text-[#8296BD]'>
+                    <h1 className='text-4xl md:text-7xl font-bold text-zinc-200'>Rafael Ordaz</h1>
+                    <h3 className='text-2xl md:text-4xl font-medium text-zinc-100 my-5'>Front end developer</h3>
+                    <p className='text-lg md:text-xl text-[#8296BD]'>
                         I am a systems engineer passionate about technology and developing mobile and web applications, as well as finding efficient solutions to various problems in different programming languages.
                     </p>
 
-                    <button className='p-5 mt-6 rounded-2xl cursor-pointer bg-zinc-200 font-medium transition duration-300 hover:bg-[#141C27] hover:text-white'>
+                    <button className='p-5 mt-6 rounded-2xl cursor-pointer bg-zinc-200 font-medium transition duration-300 hover:bg-[#141C27] hover:text-white w-full md:w-auto'>
                         Download CV
                     </button>
                 </div>
-                <div className='w-3/8 h-90 bg-slate-900 rounded-2xl'>
-                    <img src="" alt="" />
+                <div className='w-full md:w-3/8 h-64 md:h-90 bg-slate-900 rounded-2xl mt-6 md:mt-0 overflow-hidden'>
+                    <img src="/assets/mifoto.jpg" alt="" className="w-full h-full object-cover rounded-2xl"/>
                 </div>
             </div>
 
             {/* Contenedor de iconos con fade-in y líneas animadas */}
-            <div className='mx-60 mt-20 flex items-center justify-between'>
+            <div className='mx-4 sm:mx-10 md:mx-20 lg:mx-60 mt-10 md:mt-20 flex flex-wrap justify-center md:justify-between'>
                 {icons.map((Icon, idx) => (
                     <React.Fragment key={idx}>
                         {/* Icono con animación */}
@@ -53,11 +53,11 @@ function Inicio() {
                                 showIcons
                                     ? 'opacity-100 translate-y-0'
                                     : 'opacity-0 translate-y-8'
-                            }`}
+                            } m-2 md:m-0`}
                             style={{ transitionDelay: `${idx * 120}ms` }}
                         >
                             <Icon
-                                size={40}
+                                size={42}
                                 color='#ffffff'
                                 className='transition-transform duration-300 hover:scale-150'
                             />
@@ -66,7 +66,7 @@ function Inicio() {
                         {/* Línea vertical con animación */}
                         {idx < icons.length - 1 && (
                             <div
-                                className={`h-10 w-px bg-slate-700 transition-opacity duration-700 ${
+                                className={`hidden md:block h-10 w-px bg-slate-700 transition-opacity duration-700 ${
                                     showIcons
                                         ? 'opacity-100'
                                         : 'opacity-0'

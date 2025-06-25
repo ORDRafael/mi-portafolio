@@ -3,32 +3,26 @@ import ProyectoItems from './ProyectosItems';
 export default function Proyectos() {
     const proyectos = [
       {
-        imageUrl: "/ruta/imagen1.jpg",
+        imageUrl: "/assets/aglaya.png",
         title: "Aglaya SPA",
         description: "Sistema administrativo para la empresa Aglaya, que permite gestionar los clientes, citas y servicios. Desarrollado con React, TypeScript, usando Tailwind para el diseño, usando Postgres como base de datos y Go para el backend. Implementado con Next.js.",
         tags: ["React", "TypeScript", "Tailwind"]
       },
       {
-        imageUrl: "/ruta/imagen2.jpg",
+        imageUrl: "/assets/arestro.png",
         title: "AppRestro",
         description: "Aplicación para la empresa AppRestro, que permite ver y reservar restaurantes, al igual que ver los menus y los platos, con la posibilidad de ordenar por delivery. Desarrollado con Flutter.",
         tags: ["Flutter", "Dart"]
       },
       {
-        imageUrl: "/ruta/imagen2.jpg",
-        title: "AppRestro",
+        imageUrl: "/assets/besser.png",
+        title: "Besser Solutions",
         description: "Aplicación para la empresa AppRestro, que permite ver y reservar restaurantes, al igual que ver los menus y los platos, con la posibilidad de ordenar por delivery. Desarrollado con Flutter.",
         tags: ["Flutter", "Dart"]
       },
       {
-        imageUrl: "/ruta/imagen2.jpg",
-        title: "AppRestro",
-        description: "Aplicación para la empresa AppRestro, que permite ver y reservar restaurantes, al igual que ver los menus y los platos, con la posibilidad de ordenar por delivery. Desarrollado con Flutter.",
-        tags: ["Flutter", "Dart"]
-      },
-      {
-        imageUrl: "/ruta/imagen2.jpg",
-        title: "AppRestro",
+        imageUrl: "/assets/callessierra.png",
+        title: "Hospital Calle Sierra",
         description: "Aplicación para la empresa AppRestro, que permite ver y reservar restaurantes, al igual que ver los menus y los platos, con la posibilidad de ordenar por delivery. Desarrollado con Flutter.",
         tags: ["Flutter", "Dart"]
       },
