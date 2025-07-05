@@ -13,10 +13,10 @@ export default  function Home() {
         <Header/>
       </div>
       <section id='inicio' className='mt-15'><Inicio/></section>
-      <section id='proyectos' className='mt-20'><Proyectos/></section>
-      <section id='experiencia' className='mt-15'><Experiencia/></section>
-      <section id='sobre-mi' className='mt-15 mb-50'><AboutMe/></section>
-      <section id='contacto' className='mt-15 mb-50'><Contact/></section>
+      <section id='proyectos'><Proyectos/></section>
+      <section id='experiencia'><Experiencia/></section>
+      <section id='sobre-mi'><AboutMe/></section>
+      <section id='contacto'><Contact/></section>
     </div>
   );
 } 

@@ -5,13 +5,28 @@ import { IconBrandTailwind } from '@tabler/icons-react';
 import { IconBrandReact } from '@tabler/icons-react';
 import { IconBrandPhp } from '@tabler/icons-react';
 import { IconSql } from '@tabler/icons-react';
+import './typewriter.css';
 
 function Inicio() {
     const [showIcons, setShowIcons] = useState(false);
+    const [text, setText] = useState('');
 
     useEffect(() => {
         const timer = setTimeout(() => setShowIcons(true), 100);
         return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        let currentIndex = 0;
+        const interval = setInterval(() => {
+        if(currentIndex <= text.length) {
+            setText(text.slice(0, currentIndex));
+            currentIndex++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 100);
+    return () => clearInterval(interval);
     }, []);
 
     const icons = [
@@ -28,23 +43,33 @@ function Inicio() {
             {/* Sección principal */}
             <div className='flex flex-col md:flex-row justify-between mx-4 md:mx-10'>
                 <div className='max-w-md'>
-                    <h1 className='text-4xl md:text-7xl font-bold text-zinc-200'>Rafael Ordaz</h1>
+                    <div className="typewriter">
+                        <h1 className='text-4xl md:text-6xl font-bold text-zinc-200'>Rafael Ordaz</h1>
+                    </div>
+
+                    <div className="typewriter">
+
                     <h3 className='text-2xl md:text-4xl font-medium text-zinc-100 my-5'>Front end developer</h3>
+                    </div>
                     <p className='text-lg md:text-xl text-[#8296BD]'>
-                        I am a systems engineer passionate about technology and developing mobile and web applications, as well as finding efficient solutions to various problems in different programming languages.
+                    Como ingeniero de sistemas, mi pasión reside en la tecnología y en el desarrollo de aplicaciones móviles y web. Me impulsa especialmente la búsqueda de soluciones eficientes para una variedad de problemas, utilizando diversos lenguajes de programación.
                     </p>
 
-                    <button className='p-5 mt-6 rounded-2xl cursor-pointer bg-zinc-200 font-medium transition duration-300 hover:bg-[#141C27] hover:text-white w-full md:w-auto'>
-                        Download CV
-                    </button>
+                    <a 
+                        href="/assets/cv.pdf" 
+                        download 
+                        className='flex items-center justify-center md:w-1/2 p-5 mt-6 rounded-2xl cursor-pointer bg-zinc-200 font-medium transition duration-300 hover:bg-[#141C27] hover:text-white'
+                    >
+                        <span className='font-bold'>Download CV</span>
+                    </a>
                 </div>
-                <div className='w-full md:w-3/8 h-64 md:h-90 bg-slate-900 rounded-2xl mt-6 md:mt-0 overflow-hidden'>
-                    <img src="/assets/mifoto.jpg" alt="" className="w-full h-full object-cover rounded-2xl"/>
+                <div data-aos="fade-left" data-aos-mirror="true" className='w-full md:w-3/8 h-64 md:h-90 bg-slate-900 rounded-2xl mt-6 md:mt-0 overflow-hidden md:border-3 md:border-gray-700 md:hover:border-gray-600 transition-all duration-300'>
+                    <img src="/assets/mifoto.jpg" alt="" className="w-full h-full object-cover rounded-2xl hover:scale-110 transition-all duration-300"/>
                 </div>
             </div>
 
             {/* Contenedor de iconos con fade-in y líneas animadas */}
-            <div className='mx-4 sm:mx-10 md:mx-20 lg:mx-60 mt-10 md:mt-20 flex flex-wrap justify-center md:justify-between'>
+            <div className='mx-4 sm:mx-10 md:mx-20 lg:mx-60 mt-10 md:mt-30 flex flex-wrap justify-center md:justify-between'>
                 {icons.map((Icon, idx) => (
                     <React.Fragment key={idx}>
                         {/* Icono con animación */}

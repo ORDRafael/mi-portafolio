@@ -13,9 +13,9 @@ function AboutMe() {
     return (
         <div>
             <AboutMeItems 
-            imageUrl={aboutMe[0].imagenUrl} 
             title={aboutMe[0].title}
-            description={aboutMe[0].description} />
+            description={aboutMe[0].description} 
+            />
         </div>
     );
 }

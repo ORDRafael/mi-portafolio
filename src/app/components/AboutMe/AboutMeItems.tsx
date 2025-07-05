@@ -1,30 +1,51 @@
 'use client';
 
+import LottieAnimation from "./LottieAnimation";
+import React, { useEffect, useState } from 'react'; // Import useEffect and useState
+
 interface AboutMeProps {
-    imageUrl: string;
+   
     title: string;
     description: string;
 }
 
-export default function AboutMeItems ({imageUrl, title, description} : AboutMeProps) {
+export default function AboutMeItems ({ title, description} : AboutMeProps) {
+    const [animationData, setAnimationData] = useState<any | null>(null); // State to hold the animation data
+
+    useEffect(() => {
+        // Fetch the JSON from its public URL
+        fetch('/assets/animacion.json') // Correct public path
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                setAnimationData(data); // Set the fetched data to state
+            })
+            .catch(error => {
+                console.error("Error cargando la animación Lottie:", error);
+                // The ErrorBoundary will catch this if render fails, but good to log
+            });
+    }, []); // Empty dependency array means this runs once on component mount
+
     return(
         <div>
-            <div className="flex justify-center mb-10">
-            <h1 className="text-white text-3xl md:text-5xl font-medium">Sobre mi</h1>
-
+            <div className="flex justify-start mb-10 pt-20">
+                <h1 data-aos="fade-right" className="text-white text-3xl md:text-5xl font-medium">Sobre mi</h1>
             </div>
-        <div className='p-5 rounded-2xl mb-5 hover:bg-gray-900 hover:shadow-2xl transition-all duration-300'>
-            <div className="flex flex-col md:flex-row justify-between gap-10">
-                <div className="flex-shrink-0 border-gray-800 rounded-2xl mx-auto md:mx-0">
-                    <img className="w-50 h-50 md:w-100 md:h-100 border-2 rounded-2xl" src={imageUrl} alt={title} /> 
-                </div>
-                <div className="flex flex-col justify-center mt-6 md:mt-0">
-                <h3 className='text-white text-2xl md:text-3xl font-medium text-center md:text-left'>{title}</h3>
-                <p className='text-gray-600 font-medium text-lg md:text-xl text-center md:text-left mt-3'>{description}</p>
+            <div data-aos="fade-up" className='p-5 rounded-2xl mb-5 hover:bg-gray-900 hover:shadow-2xl transition-all duration-300'>
+                <div className="flex flex-col md:flex-row justify-between">
+                    <div className="flex-shrink-0 border-gray-800 rounded-2xl mx-auto w-full md:w-xl md:mx-0">
+                        <LottieAnimation animacion={animationData} className="w-full aspect-square max-w-[500px]"/>
+                    </div>
+                    <div className="flex flex-col justify-center mt-6 md:mt-0">
+                        <h3 className='text-white text-2xl md:text-3xl font-medium text-center md:text-left'>{title}</h3>
+                        <p className='text-[#8296BD] font-medium text-lg md:text-xl text-center md:text-left mt-3'>{description}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-
         </div>
     );
 }
