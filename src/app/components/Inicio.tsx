@@ -69,7 +69,7 @@ function Inicio() {
             </div>
 
             {/* Contenedor de iconos con fade-in y líneas animadas */}
-            <div className='mx-4 sm:mx-10 md:mx-20 lg:mx-60 mt-10 md:mt-30 flex flex-wrap justify-center md:justify-between'>
+            <div className='mx-4 sm:mx-10 md:mx-20 lg:mx-60 mt-10 md:mt-20 flex flex-wrap justify-center md:justify-between'>
                 {icons.map((Icon, idx) => (
                     <React.Fragment key={idx}>
                         {/* Icono con animación */}
