@@ -12,8 +12,8 @@ interface ProyectoProps {
 
 const ProyectoItems = ({imagenUrl, title, description, tags, gitHubUrl} : ProyectoProps) => {
     return(
-    <div data-aos="fade-up" className='p-5 rounded-2xl  mb-5 hover:bg-gray-900 hover:shadow-2xl transition-all duration-300'>
-                <div className="flex flex-col md:flex-row justify-start gap-4 md:gap-10">
+        <div onClick={gitHubUrl ? () => window.open(gitHubUrl, '_blank') : undefined} data-aos="fade-up" className={`block rounded-2xl mb-5 hover:bg-gray-900 hover:shadow-2xl transition-all duration-300 ${gitHubUrl ? 'cursor-pointer' : ''}`}> 
+                <div className="flex flex-col md:flex-row justify-start gap-4 md:gap-10 p-5 rounded-2xl overflow-hidden bg-transparent">
                     <div className="flex-shrink-0 w-full md:w-100 aspect-[4/3] border-1 border-gray-800 rounded-2xl overflow-hidden">
                         <img src={imagenUrl} alt={title} className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"/>
                     </div>
@@ -30,13 +30,11 @@ const ProyectoItems = ({imagenUrl, title, description, tags, gitHubUrl} : Proyec
                     </div>
                     {gitHubUrl && (
                     <div className="flex items-center justify-center md:justify-end md:items-end">
-                        <a 
-                        href={gitHubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        <button 
+                        onClick={() => window.open(gitHubUrl, '_blank')}
                         className='w-10 h-10 p-2 rounded-2xl cursor-pointer bg-zinc-200 font-medium transition duration-300 hover:bg-[#141C27] hover:text-white md: justify-end'>
                             <IconBrandGithub/>
-                        </a>
+                        </button>
                     </div>
                     )}
                 </div>
