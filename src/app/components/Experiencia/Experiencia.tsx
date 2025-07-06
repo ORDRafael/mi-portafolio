@@ -31,7 +31,6 @@ export default function Experiencia(){
                         key={index}
                         timeline={experiencia.timeline}
                         title={experiencia.title}
-                        subtitle={experiencia.subtitle}
                         description={experiencia.description}
                       />
                   </li>

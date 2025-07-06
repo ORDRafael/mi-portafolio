@@ -14,15 +14,13 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setError(null);
         
         try {
             await onSubmit(formData);
             setSubmissionSuccess(true);
             setFormData({ name: '', email: '', message: '' });
-            setError(null);
         } catch (error) {
-            setError('Error al enviar el mensaje');
+            setError(error as string);
         } finally {
             setIsSubmitting(false);
         }
@@ -71,9 +69,6 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
                 required
             ></textarea>
 
-            {error && (
-                <p className="text-red-500 text-center mt-2">{error}</p>
-            )}
             <button 
                 type="submit" 
                 disabled={isSubmitting}
@@ -83,6 +78,9 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
             </button>
             {submissionSuccess && (
                 <p className='text-green-400 text-center'>¡Mensaje enviado exitosamente!</p>
+            )}
+            {error && (
+                <p className='text-red-500 text-center'>Error al enviar el mensaje</p>
             )}
         </form>
     );
