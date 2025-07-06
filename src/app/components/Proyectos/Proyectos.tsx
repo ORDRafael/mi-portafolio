@@ -46,7 +46,7 @@ export default function Proyectos() {
     return (
       <div className=' px-5 py-20'>
         <div className="flex justify-start mb-10">
-          <h2 data-aos="fade-right" className='text-white text-5xl font-medium'>Proyectos</h2>
+          <h2 data-aos="fade-right" className='text-white text-3xl md:text-5xl font-medium'>Proyectos</h2>
         </div>
         
         <ul>

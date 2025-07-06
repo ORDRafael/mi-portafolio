@@ -32,7 +32,7 @@ export default function AboutMeItems ({ title, description} : AboutMeProps) {
     }, []); // Empty dependency array means this runs once on component mount
 
     return(
-        <div>
+        <div className='px-5'>
             <div className="flex justify-start mb-10 pt-20">
                 <h1 data-aos="fade-right" className="text-white text-3xl md:text-5xl font-medium">Sobre mi</h1>
             </div>

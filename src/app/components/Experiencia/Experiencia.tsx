@@ -19,7 +19,7 @@ export default function Experiencia(){
     return(
         <div className=' px-5 pt-20'>
                 <div className="flex justify-start mb-10">
-                  <h2 data-aos="fade-right" className='text-white text-5xl font-medium'>Experiencia</h2>
+                  <h2 data-aos="fade-right" className='text-white text-3xl md:text-5xl font-medium'>Experiencia</h2>
                 </div>
                 
                 <ul>
