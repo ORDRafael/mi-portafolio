@@ -41,10 +41,10 @@ function Inicio() {
     return (
         <div>
             {/* Sección principal */}
-            <div className='flex flex-col md:flex-row justify-between mx-4 md:mx-10'>
-                <div className='max-w-md'>
+            <div className='flex flex-col md:flex-row justify-between'>
+                <div className='max-w-md mx-4 md:mx-0'>
                     <div className="typewriter">
-                        <h1 className='text-4xl md:text-6xl font-bold text-zinc-200'>Rafael Ordaz</h1>
+                        <h1 className='text-4xl text-center md:text-left md:text-6xl font-bold text-zinc-200'>Rafael Ordaz</h1>
                     </div>
 
                     <div className="typewriter">
@@ -55,13 +55,12 @@ function Inicio() {
                     Como ingeniero de sistemas, mi pasión reside en la tecnología y en el desarrollo de aplicaciones móviles y web. Me impulsa especialmente la búsqueda de soluciones eficientes para una variedad de problemas, utilizando diversos lenguajes de programación.
                     </p>
 
-                    <a 
-                        href="/assets/cv.pdf" 
-                        download 
-                        className='flex items-center justify-center md:w-1/2 p-5 mt-6 rounded-2xl cursor-pointer bg-zinc-200 font-medium transition duration-300 hover:bg-[#141C27] hover:text-white'
+                    <button 
+                        onClick={() => window.open('/assets/cv.pdf', '_blank')}
+                        className='flex items-center justify-center md:w-1/2 p-5 mt-6 mx-auto md:mx-0 rounded-2xl cursor-pointer bg-zinc-200 font-medium transition duration-300 hover:bg-[#141C27] hover:text-white'
                     >
                         <span className='font-bold'>Download CV</span>
-                    </a>
+                    </button>
                 </div>
                 <div data-aos="fade-left" data-aos-mirror="true" className='w-full md:w-3/8 h-64 md:h-90 bg-slate-900 rounded-2xl mt-6 md:mt-0 overflow-hidden md:border-3 md:border-gray-700 md:hover:border-gray-600 transition-all duration-300'>
                     <img src="/assets/mifoto.jpg" alt="" className="w-full h-full object-cover rounded-2xl hover:scale-110 transition-all duration-300"/>
