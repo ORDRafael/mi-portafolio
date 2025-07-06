@@ -48,8 +48,8 @@ export default function AboutMeItems ({ title, description} : AboutMeProps) {
                     )}
                 </div>
                 <div className="flex flex-col justify-center mt-6 md:mt-0">
-                    <h3 className='text-white text-2xl md:text-3xl font-medium text-center md:text-left'>{title}</h3>
-                    <p className='text-[#8296BD] font-medium text-lg md:text-xl text-center md:text-left mt-3'>{description}</p>
+                    <h3 className='text-white text-2xl md:text-3xl font-medium text-left md:text-left'>{title}</h3>
+                    <p className='text-[#8296BD] font-medium text-lg md:text-xl text-left md:text-left mt-3'>{description}</p>
                 </div>
             </div>
         </div>
