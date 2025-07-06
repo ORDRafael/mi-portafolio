@@ -14,13 +14,14 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        
+        setError(null);
         try {
             await onSubmit(formData);
             setSubmissionSuccess(true);
             setFormData({ name: '', email: '', message: '' });
         } catch (error) {
             setError(error as string);
+            setSubmissionSuccess(false);
         } finally {
             setIsSubmitting(false);
         }
